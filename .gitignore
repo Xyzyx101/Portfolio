@@ -1,0 +1,7 @@
+# Ignore mac shit
+.DS_Store
+
+# Ignore emacs backup files
+*~
+
+Thumbs.db
