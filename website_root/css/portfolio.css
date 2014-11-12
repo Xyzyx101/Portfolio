@@ -1,0 +1,20 @@
+body {
+    background-color : green;
+}
+
+nav {
+    background-color : yellow;
+}
+
+nav ul li {
+    float : ;
+    background-color : red;
+}
+
+#name {
+    background-color : blue;
+    font-weight: normal;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+}
