@@ -1,14 +1,24 @@
 (function () {
     function calculateSectionSizes() {
-        var vHeight = $(window).height(),
-            vWidth = $(window).width(),
-            sections = $('section');
+        var vHeight = $(window).height();
+        var sectionContents = $('.section_content');
+        var sections = $('section');
 
+        sectionContents.css({
+            "position":"relative",
+            "top":"50%",
+            "transform":"translateY(-50%)"
+        });
         sections.css({
             "height":vHeight,
-            "width":vWidth
-        });
+        })
     };
     calculateSectionSizes();
     $(window).resize(calculateSectionSizes);
 })();
+
+/*
+	position:relative;
+    top: 50%;
+	transform: 			translateY(-50%);
+*/
