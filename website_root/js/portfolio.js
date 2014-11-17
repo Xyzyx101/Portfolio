@@ -3,16 +3,21 @@ jQuery(document).ready(function($){
     /* Resize sections to fill screen vertically */
     function calculateSectionSizes() {
         var vHeight = $(window).height();
+        var verticalNavBar = $("#vertical_nav");
         var sectionContents = $(".section_content");
         var sections = $(".nav_section");
 
         sectionContents.css({
-            "position":"relative",
-            "top":"50%",
-            "transform":"translateY(-50%)"
+            "position" : "relative",
+            "top" : "50%",
+            "transform" : "translateY(-50%)"
         });
         sections.css({
-            "height":vHeight
+            "height" : vHeight
+        });
+        verticalNavBar.css({
+            "left" : sectionContents.offset().left,
+            "border" : "0px"
         });
     };
     calculateSectionSizes();
@@ -43,7 +48,7 @@ jQuery(document).ready(function($){
     	$('.touch #cd-vertical-nav').toggleClass('open');
 
     });
-    //close navigation on touch devices when selectin an elemnt from the list
+    //close navigation on touch devices when selecting an element from the list
     $('.touch #cd-vertical-nav a').on('click', function(){
     	$('.touch #cd-vertical-nav').removeClass('open');
     });
