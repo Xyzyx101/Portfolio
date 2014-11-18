@@ -1,5 +1,27 @@
 jQuery(document).ready(function($){
 
+    (function setupParallax () {
+        var options = { mouseport : $("#parallax_viewport"), 
+                        xorigin : 0.5, 
+                        yorigin : -1,
+                        height : 3200,
+                        decay : 0.99};
+        var optionsBig = { xparallax : 0.02,
+                           yparallax : 0.05};
+        var optionsMed = { xparallax : 0.04,
+                           yparallax : 0.12};
+        var optionsSmall = { xparallax : 0.08,
+                             yparallax : 0.24};
+        
+        console.log($(".parallax_layer").length);
+        $(".parallax_layer").parallax( 
+            options,
+            optionsBig,
+            optionsMed,
+            optionsSmall
+        );
+    })();
+
     /* Resize sections to fill screen vertically */
     function calculateSectionSizes() {
         var vHeight = $(window).height();
@@ -26,7 +48,6 @@ jQuery(document).ready(function($){
     /* Nav bar */
     var contentSections = $('.nav_section');
 	var navigationItems = $('#vertical_nav a');
-    console.log(navigationItems);
 
     updateNavigation();
 	$(window).on('scroll', function(){

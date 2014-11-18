@@ -1,7 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    background-color : green;
+    background-color : #000000;
     position:relative;
 }
 
@@ -24,11 +24,19 @@ nav ul li {
 }
 
 section {
-    background-color : #99FF99;
+    /*background-color : #99FF99;*/
 }
 
-.section_content {
-    background-color : #FFFF66;
+.section_content h2 {
+    background-color : #1f65b3;
+    z-index: 100;
+}
+
+.section_content p, ul {
+    background-color : #6a8bc3;
+    -webkit-box-shadow: 0px 0px 50px 0px rgba(125,207,245,1);
+    -moz-box-shadow: 0px 0px 50px 0px rgba(125,207,245,1);
+    box-shadow: 0px 0px 50px 0px rgba(125,207,245,1);
 }
 
 #name {
@@ -37,6 +45,39 @@ section {
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: left;
+}
+
+/* Parallax Stuff */
+#parallax_viewport {
+    
+    /* TODO this breaks prallax layers
+    background-color : #00000A;*/
+    
+    position:relative;
+    overflow:hidden;
+    height : 100%;
+    width : 100%;
+}
+
+.parallax_layer {
+    position:absolute;
+    background-repeat: repeat;
+    height : 200%;
+    width : 200%;
+    top : -1000px;
+}
+
+#big_layer {
+    background: url("../images/background_big.png") repeat;
+    z-index : -100;
+}
+#med_layer {
+    background: url("../images/background_med.png") repeat;
+    z-index : -200;
+}
+#small_layer {
+    background: url("../images/background_small.png") repeat;
+    z-index : -300;
 }
 
 /* TODO
@@ -111,7 +152,7 @@ section {
   opacity: 1;
 }
 .no-touch #vertical_nav a.is-selected .nav_dot {
-  background-color: red;
+  background-color: #FFFFFF;
   -webkit-transform: scale(1.5);
   -moz-transform: scale(1.5);
   -ms-transform: scale(1.5);
@@ -125,7 +166,7 @@ section {
   height: 12px;
   width: 12px;
   border-radius: 50%;
-  background-color: #330000;
+  background-color: #cbeaff;
   -webkit-transition: -webkit-transform 0.2s, background-color 0.5s;
   -moz-transition: -moz-transform 0.2s, background-color 0.5s;
   transition: transform 0.2s, background-color 0.5s;
@@ -139,7 +180,7 @@ section {
   position: relative;
   margin-right: 10px;
   padding: .4em .5em;
-  color: #330000;
+  color: #cbeaff;
   font-size: 14px;
   font-size: 0.875rem;
   -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
