@@ -1,19 +1,18 @@
 jQuery(document).ready(function($){
 
     (function setupParallax () {
-        var options = { mouseport : $("#parallax_viewport"), 
+        var parallaxViewport = $("#parallax_viewport");
+        var options = { mouseport : parallaxViewport, 
                         xorigin : 0.5, 
                         yorigin : -1,
-                        height : 3200,
-                        decay : 0.99};
-        var optionsBig = { xparallax : 0.02,
-                           yparallax : 0.05};
-        var optionsMed = { xparallax : 0.04,
+                        decay : 0.99,
+                        frameDuration : 50};
+        var optionsBig = { xparallax : 0.24,
                            yparallax : 0.12};
-        var optionsSmall = { xparallax : 0.08,
-                             yparallax : 0.24};
-        
-        console.log($(".parallax_layer").length);
+        var optionsMed = { xparallax : 0.15,
+                           yparallax : 0.1};
+        var optionsSmall = { xparallax : 0.05,
+                             yparallax : 0.03};                            
         $(".parallax_layer").parallax( 
             options,
             optionsBig,
@@ -82,13 +81,19 @@ jQuery(document).ready(function($){
 			}else {
 				navigationItems.eq(activeSection).removeClass('is-selected');
 			}
-		});
+		});    
 	}
-
 	function smoothScroll(target) {
         $('body,html').animate(
         	{'scrollTop':target.offset().top},
         	600
         );
 	}
+    
+    var sections = $(".nav_section *:first-child");
+    sections.addClass("current-article");
+    console.log(sections);
+    function setCurrentArticle() {
+        
+    }
 });

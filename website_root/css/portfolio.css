@@ -47,10 +47,23 @@ section {
     text-align: left;
 }
 
+
+/* Article switching */
+/*.nav_section > div {
+    display : block;
+}*/
+.nav_section > * {
+    visibility : hidden;
+}
+
+.current-article {
+    visibility : visible;
+}
+
 /* Parallax Stuff */
 #parallax_viewport {
     
-    /* TODO this breaks prallax layers
+    /* TODO this breaks parallax layers
     background-color : #00000A;*/
     
     position:relative;
