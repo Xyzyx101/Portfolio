@@ -47,17 +47,12 @@ section {
     text-align: left;
 }
 
-
-/* Article switching */
-/*.nav_section > div {
-    display : block;
-}*/
-.nav_section > * {
-    visibility : hidden;
+.section_content {
+    display : none; 
 }
 
 .current-article {
-    visibility : visible;
+    display : block;
 }
 
 /* Parallax Stuff */

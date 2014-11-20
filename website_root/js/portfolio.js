@@ -1,19 +1,94 @@
 jQuery(document).ready(function($){
 
+    var navSections = $(".nav_section");
+    navSections.each(function () {
+        $(this).children().not("img").eq(0).addClass("current-article");
+    });
+
+    function updateArrows () {
+        var navSections = $(".nav_section");
+        navSections.each(function () {
+            var arrows = $(this).children("img");
+            if (arrows.length === 0) return;
+            var sectionContent = $(this).children().not("img");
+            var currentArticle = $(this).children().filter(".current-article");
+            if( sectionContent.length === 0) {
+                noArrow(arrows);
+            } else {
+                if ( sectionContent.first().is(".current-article") ) {
+                    forwardArrow(arrows);
+                } else if ( sectionContent.last().is(".current-article") ) {
+                    backArrow(arrows);
+                } else {
+                    bothArrow(arrows);
+                }
+            }
+        });
+    }
+    updateArrows();
+    function noArrow (arrows) {
+        arrows.each(function () {
+            $(this).css({"visibility" : "hidden"});
+        });
+    }
+    function bothArrow (arrows) {
+        arrows.each(function () {
+            $(this).css({"visibility" : "visible"});
+        });
+    }
+    function forwardArrow (arrows) {
+        arrows.eq(0).css({"visibility" : "hidden"});
+        arrows.eq(1).css({"visibility" : "visible"});
+    }
+    function backArrow (arrows) {
+        arrows.eq(0).css({"visibility" : "visible"});
+        arrows.eq(1).css({"visibility" : "hidden"});
+    }
+
+    $(".forward-arrow").on('click', function(){
+        var sectionContent = $(this).siblings().not("img");
+        var i = 0;
+        do {
+            if( sectionContent.eq(i).is(".current-article") ) {
+                sectionContent.eq(i).removeClass("current-article");
+                sectionContent.eq(i+1).addClass("current-article");
+                break;
+            }
+            ++i;
+        } while (i < sectionContent.length)
+        updateArrows();
+        calculateSectionSizes();
+    });
+    $(".back-arrow").on('click', function(){
+        var sectionContent = $(this).siblings().not("img");
+        var i = 0;
+        do {
+            if( sectionContent.eq(i).is(".current-article") ) {
+                sectionContent.eq(i).removeClass("current-article");
+                sectionContent.eq(i-1).addClass("current-article");
+                break;
+            }
+            ++i;
+        } while (i < sectionContent.length)
+        updateArrows();
+        calculateSectionSizes();
+    });
+
+
     (function setupParallax () {
         var parallaxViewport = $("#parallax_viewport");
-        var options = { mouseport : parallaxViewport, 
-                        xorigin : 0.5, 
-                        yorigin : -1,
-                        decay : 0.99,
+        var options = { mouseport : parallaxViewport,
+                        xorigin : 0.5,
+                        yorigin : 0.0,
+                        decay : 0.97,
                         frameDuration : 50};
-        var optionsBig = { xparallax : 0.24,
-                           yparallax : 0.12};
-        var optionsMed = { xparallax : 0.15,
-                           yparallax : 0.1};
-        var optionsSmall = { xparallax : 0.05,
-                             yparallax : 0.03};                            
-        $(".parallax_layer").parallax( 
+        var optionsBig = { xparallax : -0.24,
+                           yparallax : -0.12};
+        var optionsMed = { xparallax : -0.15,
+                           yparallax : -0.1};
+        var optionsSmall = { xparallax : -0.05,
+                             yparallax : -0.03};
+        $(".parallax_layer").parallax(
             options,
             optionsBig,
             optionsMed,
@@ -25,7 +100,7 @@ jQuery(document).ready(function($){
     function calculateSectionSizes() {
         var vHeight = $(window).height();
         var verticalNavBar = $("#vertical_nav");
-        var sectionContents = $(".section_content");
+        var sectionContents = $(".section_content").add(".forward-arrow,.back-arrow");
         var sections = $(".nav_section");
 
         sectionContents.css({
@@ -81,7 +156,7 @@ jQuery(document).ready(function($){
 			}else {
 				navigationItems.eq(activeSection).removeClass('is-selected');
 			}
-		});    
+		});
 	}
 	function smoothScroll(target) {
         $('body,html').animate(
@@ -89,11 +164,4 @@ jQuery(document).ready(function($){
         	600
         );
 	}
-    
-    var sections = $(".nav_section *:first-child");
-    sections.addClass("current-article");
-    console.log(sections);
-    function setCurrentArticle() {
-        
-    }
 });
