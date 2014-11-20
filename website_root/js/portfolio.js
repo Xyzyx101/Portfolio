@@ -2,15 +2,15 @@ jQuery(document).ready(function($){
 
     var navSections = $(".nav_section");
     navSections.each(function () {
-        $(this).children().not("img").eq(0).addClass("current-article");
+        $(this).children().not(".back-arrow,.forward-arrow").eq(0).addClass("current-article");
     });
 
     function updateArrows () {
         var navSections = $(".nav_section");
         navSections.each(function () {
-            var arrows = $(this).children("img");
+            var arrows = $(this).children(".back-arrow,.forward-arrow");
             if (arrows.length === 0) return;
-            var sectionContent = $(this).children().not("img");
+            var sectionContent = $(this).children().not(".back-arrow,.forward-arrow");
             var currentArticle = $(this).children().filter(".current-article");
             if( sectionContent.length === 0) {
                 noArrow(arrows);
@@ -46,7 +46,7 @@ jQuery(document).ready(function($){
     }
 
     $(".forward-arrow").on('click', function(){
-        var sectionContent = $(this).siblings().not("img");
+        var sectionContent = $(this).siblings().not(".back-arrow,.forward-arrow");
         var i = 0;
         do {
             if( sectionContent.eq(i).is(".current-article") ) {
@@ -60,7 +60,7 @@ jQuery(document).ready(function($){
         calculateSectionSizes();
     });
     $(".back-arrow").on('click', function(){
-        var sectionContent = $(this).siblings().not("img");
+        var sectionContent = $(this).siblings().not(".back-arrow,.forward-arrow");
         var i = 0;
         do {
             if( sectionContent.eq(i).is(".current-article") ) {
@@ -84,9 +84,9 @@ jQuery(document).ready(function($){
                         frameDuration : 50};
         var optionsBig = { xparallax : -0.24,
                            yparallax : -0.12};
-        var optionsMed = { xparallax : -0.15,
-                           yparallax : -0.1};
-        var optionsSmall = { xparallax : -0.05,
+        var optionsMed = { xparallax : -0.12,
+                           yparallax : -0.06};
+        var optionsSmall = { xparallax : -0.07,
                              yparallax : -0.03};
         $(".parallax_layer").parallax(
             options,
@@ -121,47 +121,47 @@ jQuery(document).ready(function($){
 
     /* Nav bar */
     var contentSections = $('.nav_section');
-	var navigationItems = $('#vertical_nav a');
+    var navigationItems = $('#vertical_nav a');
 
     updateNavigation();
-	$(window).on('scroll', function(){
-		updateNavigation();
-	});
-    	//smooth scroll to the section
-	navigationItems.on('click', function(event){
+    $(window).on('scroll', function(){
+        updateNavigation();
+    });
+    //smooth scroll to the section
+    navigationItems.on('click', function(event){
         event.preventDefault();
         smoothScroll($(this.hash));
     });
-    //smooth scroll to second section
-    /*TODO
-    $('.cd-scroll-down').on('click', function(event){
+
+    $(".down-arrow").on('click', function(event){
         event.preventDefault();
-        smoothScroll($(this.hash));
-     });*/
+        smoothScroll($("#section2"));
+    });
+
     //open-close navigation on touch devices
     $('.touch .cd-nav-trigger').on('click', function(){
-    	$('.touch #cd-vertical-nav').toggleClass('open');
+        $('.touch #cd-vertical-nav').toggleClass('open');
 
     });
     //close navigation on touch devices when selecting an element from the list
     $('.touch #cd-vertical-nav a').on('click', function(){
-    	$('.touch #cd-vertical-nav').removeClass('open');
+        $('.touch #cd-vertical-nav').removeClass('open');
     });
     function updateNavigation() {
-		contentSections.each(function(){
-			$this = $(this);
-			var activeSection = $('#vertical_nav a[href="#'+$this.attr('id')+'"]').data('number') - 1;
-			if ( ( $this.offset().top - $(window).height()/2 < $(window).scrollTop() ) && ( $this.offset().top + $this.height() - $(window).height()/2 > $(window).scrollTop() ) ) {
-				navigationItems.eq(activeSection).addClass('is-selected');
-			}else {
-				navigationItems.eq(activeSection).removeClass('is-selected');
-			}
-		});
-	}
-	function smoothScroll(target) {
+        contentSections.each(function(){
+            $this = $(this);
+            var activeSection = $('#vertical_nav a[href="#'+$this.attr('id')+'"]').data('number') - 1;
+            if ( ( $this.offset().top - $(window).height()/2 < $(window).scrollTop() ) && ( $this.offset().top + $this.height() - $(window).height()/2 > $(window).scrollTop() ) ) {
+                navigationItems.eq(activeSection).addClass('is-selected');
+            }else {
+                navigationItems.eq(activeSection).removeClass('is-selected');
+            }
+        });
+    }
+    function smoothScroll(target) {
         $('body,html').animate(
-        	{'scrollTop':target.offset().top},
-        	600
+            {'scrollTop':target.offset().top},
+            600
         );
-	}
+    }
 });
