@@ -12,7 +12,7 @@ jQuery(document).ready(function($){
             if (arrows.length === 0) return;
             var sectionContent = $(this).children().not(".back-arrow,.forward-arrow");
             var currentArticle = $(this).children().filter(".current-article");
-            if( sectionContent.length === 0) {
+            if( sectionContent.length === 1) {
                 noArrow(arrows);
             } else {
                 if ( sectionContent.first().is(".current-article") ) {
