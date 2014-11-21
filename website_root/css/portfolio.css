@@ -16,6 +16,13 @@ nav ul li {
     float : left;
 }
 
+a {
+    color : #b27f00;
+}
+a:hover{
+    color : #ffc943;
+}
+
 .section_content h2 {
     font-size : 140%;
     background-color : #1c45b2;
