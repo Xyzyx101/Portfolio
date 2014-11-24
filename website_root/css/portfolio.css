@@ -19,8 +19,19 @@ nav ul li {
 a {
     color : #b27f00;
 }
+
 a:hover{
     color : #ffc943;
+}
+
+#binary-background {
+    position: fixed;
+    width: 960px;
+    height: 6000px;
+    background: url("../images/binary.gif") repeat;
+    background-position: 0 0;
+    z-index : -1000;
+    opacity: 0.99;
 }
 
 .section_content h2 {
