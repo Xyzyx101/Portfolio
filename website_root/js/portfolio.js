@@ -1,7 +1,7 @@
 jQuery(document).ready(function($){
 
-    var navSections = $(".nav_section");
-    navSections.each(function () {
+    var sectionContainers = $(".section-container");
+    sectionContainers.each(function () {
         $(this).children().not(".back-arrow,.forward-arrow").eq(0).addClass("current-article");
     });
 
@@ -10,8 +10,8 @@ jQuery(document).ready(function($){
         navSections.each(function () {
             var arrows = $(this).children(".back-arrow,.forward-arrow");
             if (arrows.length === 0) return;
-            var sectionContent = $(this).children().not(".back-arrow,.forward-arrow");
-            var currentArticle = $(this).children().filter(".current-article");
+            var sectionContent = $(this).children(".section-container").children();
+            //var currentArticle = sectionContainer.filter(".current-article");
             if( sectionContent.length === 1) {
                 noArrow(arrows);
             } else {
@@ -46,7 +46,7 @@ jQuery(document).ready(function($){
     }
 
     $(".forward-arrow").on('click', function(){
-        var sectionContent = $(this).siblings().not(".back-arrow,.forward-arrow");
+        var sectionContent = $(this).siblings(".section-container").children();
         var i = 0;
         do {
             if( sectionContent.eq(i).is(".current-article") ) {
@@ -60,7 +60,7 @@ jQuery(document).ready(function($){
         calculateSectionSizes();
     });
     $(".back-arrow").on('click', function(){
-        var sectionContent = $(this).siblings().not(".back-arrow,.forward-arrow");
+        var sectionContent = $(this).siblings(".section-container").children();
         var i = 0;
         do {
             if( sectionContent.eq(i).is(".current-article") ) {
@@ -100,10 +100,10 @@ jQuery(document).ready(function($){
     function calculateSectionSizes() {
         var vHeight = $(window).height();
         var verticalNavBar = $("#vertical_nav");
-        var sectionContents = $(".section_content").add(".forward-arrow,.back-arrow");
+        var sectionContainer = $(".section-container").add(".forward-arrow,.back-arrow");
         var sections = $(".nav_section");
 
-        sectionContents.css({
+        sectionContainer.css({
             "position" : "relative",
             "top" : "50%",
             "transform" : "translateY(-50%)"
@@ -112,7 +112,7 @@ jQuery(document).ready(function($){
             "height" : vHeight
         });
         verticalNavBar.css({
-            "left" : sectionContents.offset().left,
+            "left" : sectionContainer.offset().left,
             "border" : "0px"
         });
     };
