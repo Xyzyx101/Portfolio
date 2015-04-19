@@ -1,23 +1,23 @@
-jQuery(document).ready(function($){
-
+jQuery(document).ready(function ($) {
+    "use strict";
     var sectionContainers = $(".section-container");
     sectionContainers.each(function () {
         $(this).children().not(".back-arrow,.forward-arrow").eq(0).addClass("current-article");
     });
 
-    function updateArrows () {
+    function updateArrows() {
         var navSections = $(".nav_section");
         navSections.each(function () {
             var arrows = $(this).children(".back-arrow,.forward-arrow");
             if (arrows.length === 0) return;
             var sectionContent = $(this).children(".section-container").children();
             //var currentArticle = sectionContainer.filter(".current-article");
-            if( sectionContent.length === 1) {
+            if (sectionContent.length === 1) {
                 noArrow(arrows);
             } else {
-                if ( sectionContent.first().is(".current-article") ) {
+                if (sectionContent.first().is(".current-article")) {
                     forwardArrow(arrows);
-                } else if ( sectionContent.last().is(".current-article") ) {
+                } else if (sectionContent.last().is(".current-article")) {
                     backArrow(arrows);
                 } else {
                     bothArrow(arrows);
@@ -26,68 +26,76 @@ jQuery(document).ready(function($){
         });
     }
     updateArrows();
-    function noArrow (arrows) {
+    function noArrow(arrows) {
         arrows.each(function () {
-            $(this).css({"visibility" : "hidden"});
+            $(this).css({ "visibility": "hidden" });
         });
     }
-    function bothArrow (arrows) {
+    function bothArrow(arrows) {
         arrows.each(function () {
-            $(this).css({"visibility" : "visible"});
+            $(this).css({ "visibility": "visible" });
         });
     }
-    function forwardArrow (arrows) {
-        arrows.eq(0).css({"visibility" : "hidden"});
-        arrows.eq(1).css({"visibility" : "visible"});
+    function forwardArrow(arrows) {
+        arrows.eq(0).css({ "visibility": "hidden" });
+        arrows.eq(1).css({ "visibility": "visible" });
     }
-    function backArrow (arrows) {
-        arrows.eq(0).css({"visibility" : "visible"});
-        arrows.eq(1).css({"visibility" : "hidden"});
+    function backArrow(arrows) {
+        arrows.eq(0).css({ "visibility": "visible" });
+        arrows.eq(1).css({ "visibility": "hidden" });
     }
 
-    $(".forward-arrow").on('click', function(){
+    $(".forward-arrow").on('click', function () {
         var sectionContent = $(this).siblings(".section-container").children();
         var i = 0;
         do {
-            if( sectionContent.eq(i).is(".current-article") ) {
+            if (sectionContent.eq(i).is(".current-article")) {
                 sectionContent.eq(i).removeClass("current-article");
-                sectionContent.eq(i+1).addClass("current-article");
+                sectionContent.eq(i + 1).addClass("current-article");
                 break;
             }
             ++i;
-        } while (i < sectionContent.length)
+        } while (i < sectionContent.length);
         updateArrows();
         calculateSectionSizes();
     });
-    $(".back-arrow").on('click', function(){
+    $(".back-arrow").on('click', function () {
         var sectionContent = $(this).siblings(".section-container").children();
         var i = 0;
         do {
-            if( sectionContent.eq(i).is(".current-article") ) {
+            if (sectionContent.eq(i).is(".current-article")) {
                 sectionContent.eq(i).removeClass("current-article");
-                sectionContent.eq(i-1).addClass("current-article");
+                sectionContent.eq(i - 1).addClass("current-article");
                 break;
             }
             ++i;
-        } while (i < sectionContent.length)
+        } while (i < sectionContent.length);
         updateArrows();
         calculateSectionSizes();
     });
 
 
-    (function setupParallax () {
+    (function setupParallax() {
         var parallaxViewport = $("#parallax_viewport");
-        var options = { mouseport : parallaxViewport,
-                        xorigin : 0.5,
-                        yorigin : 0.0,
-                        decay : 0.97,
-                        frameDuration : 50};
-        var optionsBig = { xparallax : -0.24,
-                           yparallax : -0.12};
-        var optionsMed = { xparallax : -0.12,
-                           yparallax : -0.06};
-        var optionsSmall = { xparallax : -0.07,
-                             yparallax : -0.03};
+        var options = {
+            mouseport: parallaxViewport,
+            xorigin: 0.5,
+            yorigin: 0.0,
+            decay: 0.97,
+            frameDuration: 50
+        };
+        var optionsBig = {
+            xparallax: -0.24,
+            yparallax: -0.12
+        };
+        var optionsMed = {
+            xparallax: -0.12,
+            yparallax: -0.06
+        };
+        var optionsSmall = {
+            xparallax: -0.07,
+            yparallax: -0.03
+        };
         $(".parallax_layer").parallax(
             options,
             optionsBig,
@@ -104,18 +112,18 @@ jQuery(document).ready(function($){
         var sections = $(".nav_section");
 
         sectionContainer.css({
-            "position" : "relative",
-            "top" : "50%",
-            "transform" : "translateY(-50%)"
+            "position": "relative",
+            "top": "50%",
+            "transform": "translateY(-50%)"
         });
         sections.css({
-            "height" : vHeight
+            "height": vHeight
         });
         verticalNavBar.css({
-            "left" : sectionContainer.offset().left,
-            "border" : "0px"
+            "left": sectionContainer.offset().left,
+            "border": "0px"
         });
-    };
+    }
     calculateSectionSizes();
     $(window).resize(calculateSectionSizes);
 
@@ -124,43 +132,43 @@ jQuery(document).ready(function($){
     var navigationItems = $('#vertical_nav a');
 
     updateNavigation();
-    $(window).on('scroll', function(){
+    $(window).on('scroll', function () {
         updateNavigation();
     });
     //smooth scroll to the section
-    navigationItems.on('click', function(event){
+    navigationItems.on('click', function (event) {
         event.preventDefault();
         smoothScroll($(this.hash));
     });
 
-    $(".down-arrow").on('click', function(event){
+    $(".down-arrow").on('click', function (event) {
         event.preventDefault();
         smoothScroll($("#section2"));
     });
 
     //open-close navigation on touch devices
-    $('.touch .cd-nav-trigger').on('click', function(){
+    $('.touch .cd-nav-trigger').on('click', function () {
         $('.touch #cd-vertical-nav').toggleClass('open');
 
     });
     //close navigation on touch devices when selecting an element from the list
-    $('.touch #cd-vertical-nav a').on('click', function(){
+    $('.touch #cd-vertical-nav a').on('click', function () {
         $('.touch #cd-vertical-nav').removeClass('open');
     });
     function updateNavigation() {
-        contentSections.each(function(){
-            $this = $(this);
-            var activeSection = $('#vertical_nav a[href="#'+$this.attr('id')+'"]').data('number') - 1;
-            if ( ( $this.offset().top - $(window).height()/2 < $(window).scrollTop() ) && ( $this.offset().top + $this.height() - $(window).height()/2 > $(window).scrollTop() ) ) {
+        contentSections.each(function () {
+            var $this = $(this);
+            var activeSection = $('#vertical_nav a[href="#' + $this.attr('id') + '"]').data('number') - 1;
+            if (($this.offset().top - $(window).height() / 2 < $(window).scrollTop()) && ($this.offset().top + $this.height() - $(window).height() / 2 > $(window).scrollTop())) {
                 navigationItems.eq(activeSection).addClass('is-selected');
-            }else {
+            } else {
                 navigationItems.eq(activeSection).removeClass('is-selected');
             }
         });
     }
     function smoothScroll(target) {
         $('body,html').animate(
-            {'scrollTop':target.offset().top},
+            { 'scrollTop': target.offset().top },
             600
         );
     }
