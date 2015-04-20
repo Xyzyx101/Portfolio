@@ -1,11 +1,11 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    background-color : #000000;
-    position:relative;
+    background-color: #000000;
+    position: relative;
 }
 
-header,h1,h2 {
+header, h1, h2 {
     font-family: 'Orbitron', sans-serif;
     font-weight: 400;
     border-top-left-radius: 4px;
@@ -13,16 +13,16 @@ header,h1,h2 {
 }
 
 nav ul li {
-    float : left;
+    float: left;
 }
 
 a {
-    color : #b27f00;
+    color: #b27f00;
 }
 
-a:hover{
-    color : #ffc943;
-}
+    a:hover {
+        color: #ffc943;
+    }
 
 #binary-background {
     position: fixed;
@@ -30,62 +30,63 @@ a:hover{
     height: 6000px;
     background: url("../images/binary.gif") repeat;
     background-position: 0 0;
-    z-index : -1000;
+    z-index: -1000;
     opacity: 0.99;
 }
 
 .section-content {
     /*background-color : red;*/
-    background-color : #3561d4;
-    display : none;
+    background-color: #3561d4;
+    display: none;
 }
 
-.section-content h2 {
-    font-size : 140%;
-    background-color : #1c45b2;
-    color : #ffc943;
-    z-index: 100;
-    padding-top : 5px;
-    padding-bottom : 5px;
-}
+    .section-content h2 {
+        font-size: 140%;
+        background-color: #1c45b2;
+        color: #ffc943;
+        z-index: 100;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
 
-.section-content h3 {
-    font-size : 110%;
-    font-style : italic;
-    background-color : #3561d4;
-    color : #ffc943;
-    z-index: 100;
-    padding-top : 1em;
-    padding-bottom : 0.5em;
-}
-.section-content h4 {
-    font-size : 100%;
-    font-style : italic;
-    background-color : #1c45b2;
-    color : #ffc943;
-    z-index: 100;
-    padding-top : 5px;
-    padding-bottom : 5px;
-}
+    .section-content h3 {
+        font-size: 110%;
+        font-style: italic;
+        background-color: #3561d4;
+        color: #ffc943;
+        z-index: 100;
+        padding-top: 1em;
+        padding-bottom: 0.5em;
+    }
 
-.section-content p,.section-content ul {
-    color : #ffc943;
-    /*background-color : #3561d4;*/
-    padding-top : 5px;
-    padding-bottom : 5px;
-    text-indent : 2em;
-}
+    .section-content h4 {
+        font-size: 100%;
+        font-style: italic;
+        background-color: #1c45b2;
+        color: #ffc943;
+        z-index: 100;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
 
-.section-container{
+    .section-content p, .section-content ul {
+        color: #ffc943;
+        /*background-color : #3561d4;*/
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-indent: 2em;
+    }
+
+.section-container {
     /*background-color : green;*/
     /*background-color : #3561d4;*/
     /*height : 100%;*/
 }
 
 #name {
-    padding : 20px 0px;
-    background-color : #1c45b2;
-    color : #ffc943;/*#0046ff;*/
+    padding: 20px 0;
+    background-color: #1c45b2;
+    color: #ffc943; /*#0046ff;*/
     font-family: 'Orbitron', sans-serif;
     font-weight: 500;
     font-weight: bold;
@@ -97,45 +98,46 @@ a:hover{
 }
 
 .shadow {
-    text-shadow: 2px 2px 0px #0b1a44,
-                 3px 3px 0px #b27f00,
-                 4px 4px 0px #b27f00,
-                 5px 5px 0px #b27f00,
-                 6px 6px 0px #0b1a44,
-                 7px 7px 0px #0b1a44;
+    text-shadow: 2px 2px 0 #0b1a44, 3px 3px 0 #b27f00, 4px 4px 0 #b27f00, 5px 5px 0 #b27f00, 6px 6px 0 #0b1a44, 7px 7px 0 #0b1a44;
     -webkit-transition: all 0.12s ease-out;
-    -moz-transition:    all 0.12s ease-out;
-    -ms-transition:     all 0.12s ease-out;
-    -o-transition:      all 0.12s ease-out;
-}
-.shadow:hover {
-    position: relative;
-    -webkit-transform: scale(1.05);
-    -moz-transform:    scale(1.05);
-    -ms-transform:     scale(1.05);
-    -o-transform:      scale(1.05);
+    -moz-transition: all 0.12s ease-out;
+    -ms-transition: all 0.12s ease-out;
+    -o-transition: all 0.12s ease-out;
+    transition: all 0.12s ease-out;
 }
 
+    .shadow:hover {
+        position: relative;
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        -o-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+
 .current-article {
-    display : block;
+    display: block;
 }
 
 .contact_list li {
-    list-style-type : none;
+    list-style-type: none;
 }
-.contact_list li a img {
-    height : 140px;
-}
-.contact_list li a p {
-    color : #b27f00;
-    height : 140px;
-    line-height: 140px;
-    font-size : 160%;
-    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
-}
-.contact_list li a p:hover {
-    color : #ffc943;
-}
+
+    .contact_list li a img {
+        height: 140px;
+    }
+
+    .contact_list li a p {
+        color: #b27f00;
+        height: 140px;
+        line-height: 140px;
+        font-size: 160%;
+        box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    }
+
+        .contact_list li a p:hover {
+            color: #ffc943;
+        }
 
 /* Intro screen down arrow */
 .down-arrow {
@@ -144,6 +146,7 @@ a:hover{
     height: 100%;
     width: 120px;
 }
+
 .down-arrow-image {
     position: absolute;
     bottom: 60px;
@@ -152,12 +155,14 @@ a:hover{
     background: url("../images/down-arrows-120x60px.png") no-repeat;
     background-position: 0 0;
 }
-.down-arrow-image:hover {
-    background-position: -120px 0;
-}
-.down-arrow-image:active {
-    background-position: -240px 0;
-}
+
+    .down-arrow-image:hover {
+        background-position: -120px 0;
+    }
+
+    .down-arrow-image:active {
+        background-position: -240px 0;
+    }
 
 /* Article navigation arrows */
 .back-arrow-image {
@@ -167,12 +172,15 @@ a:hover{
     background: url("../images/arrows-60px.png") no-repeat;
     background-position: 0 -60px;
 }
-.back-arrow-image:hover {
-    background-position: -60px -60px;
-}
-.back-arrow-image:active {
-    background-position: -120px -60px;
-}
+
+    .back-arrow-image:hover {
+        background-position: -60px -60px;
+    }
+
+    .back-arrow-image:active {
+        background-position: -120px -60px;
+    }
+
 .forward-arrow-image {
     display: block;
     height: 60px;
@@ -180,40 +188,44 @@ a:hover{
     background: url("../images/arrows-60px.png") no-repeat;
     background-position: 0 0;
 }
-.forward-arrow-image:hover {
-    background-position: -60px 0;
-}
-.forward-arrow-image:active {
-    background-position: -120px 0;
-}
+
+    .forward-arrow-image:hover {
+        background-position: -60px 0;
+    }
+
+    .forward-arrow-image:active {
+        background-position: -120px 0;
+    }
 
 /* Parallax Stuff */
 #parallax_viewport {
-    position:relative;
-    overflow:hidden;
-    height : 100%;
-    width : 100%;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
 }
 
 .parallax_layer {
-    position:absolute;
+    position: absolute;
     background-repeat: repeat;
-    height : 200%;
-    width : 200%;
-    top : -1000px;
+    height: 200%;
+    width: 200%;
+    top: -1000px;
 }
 
 #big_layer {
     background: url("../images/background_big.png") repeat;
-    z-index : -100;
+    z-index: -100;
 }
+
 #med_layer {
     background: url("../images/background_med.png") repeat;
-    z-index : -200;
+    z-index: -200;
 }
+
 #small_layer {
     background: url("../images/background_small.png") repeat;
-    z-index : -300;
+    z-index: -300;
 }
 
 /* No Touch devices */
@@ -223,7 +235,7 @@ a:hover{
 
 .no-touch #vertical_nav {
     position: fixed;
-    left: 0px;
+    left: 0;
     top: 50%;
     bottom: auto;
     -webkit-transform: translateY(-50%);
@@ -234,87 +246,95 @@ a:hover{
     z-index: 1;
 }
 
-.no-touch #vertical_nav li {
-    text-align: left;
-}
+    .no-touch #vertical_nav li {
+        text-align: left;
+    }
 
-.no-touch #vertical_nav a {
-    display: inline-block;
-    /* prevent weird movements on hover when you use a CSS3 transformation - webkit browsers */
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
+    .no-touch #vertical_nav a {
+        display: inline-block;
+        /* prevent weird movements on hover when you use a CSS3 transformation - webkit browsers */
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
 
-.no-touch #vertical_nav a:after {
-    content: "";
-    display: table;
-    clear: both;
-}
+        .no-touch #vertical_nav a:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
 
-.no-touch #vertical_nav a span {
-    float: left;
-    display: inline-block;
-    -webkit-transform: scale(0.6);
-    -moz-transform: scale(0.6);
-    -ms-transform: scale(0.6);
-    -o-transform: scale(0.6);
-    transform: scale(0.6);
-}
-.no-touch #vertical_nav a:hover span {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-}
-.no-touch #vertical_nav a:hover .nav_label {
-    opacity: 1;
-    border-radius: 15%;
-}
-.no-touch #vertical_nav a.is-selected .nav_dot {
-    background-color: #ffc943;
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    transform: scale(1.5);
-}
-.no-touch #vertical_nav .nav_dot {
-    position: relative;
-    /* we set a top value in order to align the dot with the label. If you change label's font, you may need to change this top value*/
-    top: 8px;
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
-    background-color: #b27f00;
-    -webkit-transition: -webkit-transform 0.2s, background-color 0.5s;
-    -moz-transition: -moz-transform 0.2s, background-color 0.5s;
-    transition: transform 0.2s, background-color 0.5s;
-    -webkit-transform-origin: 50% 50%;
-    -moz-transform-origin: 50% 50%;
-    -ms-transform-origin: 50% 50%;
-    -o-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-}
-.no-touch #vertical_nav .nav_label {
-    position: relative;
-    margin-right: 10px;
-    padding: .4em .5em;
-    color: #ffc943;
-    background-color: #3561d4;
-    border-radius: 6%;
-    font-size: 14px;
-    font-size: 0.875rem;
-    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
-    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
-    transition: transform 0.2s, opacity 0.2s;
-    opacity: 0;
-    -webkit-transform-origin: 100% 50%;
-    -moz-transform-origin: 100% 50%;
-    -ms-transform-origin: 100% 50%;
-    -o-transform-origin: 100% 50%;
-    transform-origin: 0% 50%;
-}
+        .no-touch #vertical_nav a span {
+            float: left;
+            display: inline-block;
+            -webkit-transform: scale(0.6);
+            -moz-transform: scale(0.6);
+            -ms-transform: scale(0.6);
+            -o-transform: scale(0.6);
+            transform: scale(0.6);
+        }
+
+        .no-touch #vertical_nav a:hover span {
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform: scale(1);
+        }
+
+        .no-touch #vertical_nav a:hover .nav_label {
+            opacity: 1;
+            border-radius: 15%;
+        }
+
+        .no-touch #vertical_nav a.is-selected .nav_dot {
+            background-color: #ffc943;
+            -webkit-transform: scale(1.5);
+            -moz-transform: scale(1.5);
+            -ms-transform: scale(1.5);
+            -o-transform: scale(1.5);
+            transform: scale(1.5);
+        }
+
+    .no-touch #vertical_nav .nav_dot {
+        position: relative;
+        /* we set a top value in order to align the dot with the label. If you change label's font, you may need to change this top value*/
+        top: 8px;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        background-color: #b27f00;
+        -webkit-transition: -webkit-transform 0.2s, background-color 0.5s;
+        -moz-transition: -moz-transform 0.2s, background-color 0.5s;
+        -o-transition: -o-transform 0.2s, background-color 0.5s;
+        transition: transform 0.2s, background-color 0.5s;
+        -webkit-transform-origin: 50% 50%;
+        -moz-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+        -o-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+    }
+
+    .no-touch #vertical_nav .nav_label {
+        position: relative;
+        margin-right: 10px;
+        padding: .4em .5em;
+        color: #ffc943;
+        background-color: #3561d4;
+        border-radius: 6%;
+        font-size: 14px;
+        font-size: 0.875rem;
+        -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+        -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+        -o-transition: -o-transform 0.2s, opacity 0.2s;
+        transition: transform 0.2s, opacity 0.2s;
+        opacity: 0;
+        -webkit-transform-origin: 100% 50%;
+        -moz-transform-origin: 100% 50%;
+        -ms-transform-origin: 100% 50%;
+        -o-transform-origin: 100% 50%;
+        transform-origin: 0 50%;
+    }
 
 /* Touch devices */
 .touch .cd-nav-trigger {
@@ -328,37 +348,41 @@ a:hover{
     border-radius: 0.25em;
     background: rgba(255, 255, 255, 0.9);
 }
-.touch .cd-nav-trigger span {
-    position: absolute;
-    height: 4px;
-    width: 4px;
-    background-color: #3e3947;
-    border-radius: 50%;
-    left: 50%;
-    top: 50%;
-    bottom: auto;
-    right: auto;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -o-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-}
-.touch .cd-nav-trigger span::before, .touch .cd-nav-trigger span::after {
-    content: '';
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    background-color: inherit;
-    border-radius: inherit;
-}
-.touch .cd-nav-trigger span::before {
-    top: -9px;
-}
-.touch .cd-nav-trigger span::after {
-    bottom: -9px;
-}
+
+    .touch .cd-nav-trigger span {
+        position: absolute;
+        height: 4px;
+        width: 4px;
+        background-color: #3e3947;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        right: auto;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -o-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+        .touch .cd-nav-trigger span::before, .touch .cd-nav-trigger span::after {
+            content: '';
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            background-color: inherit;
+            border-radius: inherit;
+        }
+
+        .touch .cd-nav-trigger span::before {
+            top: -9px;
+        }
+
+        .touch .cd-nav-trigger span::after {
+            bottom: -9px;
+        }
 
 .touch #cd-vertical-nav {
     position: fixed;
@@ -382,63 +406,75 @@ a:hover{
     transform: scale(0);
     -webkit-transition-property: -webkit-transform;
     -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
     transition-property: transform;
     -webkit-transition-duration: 0.2s;
     -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
     transition-duration: 0.2s;
     border-radius: 0.25em;
     background-color: rgba(255, 255, 255, 0.9);
 }
-.touch #cd-vertical-nav a {
-    display: block;
-    padding: 1em;
-    border-bottom: 1px solid rgba(62, 57, 71, 0.1);
-}
-.touch #cd-vertical-nav a span:first-child {
-    display: none;
-}
-.touch #cd-vertical-nav a.is-selected span:last-child {
-    color: #d88683;
-}
-.touch #cd-vertical-nav.open {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-}
-.touch #cd-vertical-nav.open + .cd-nav-trigger {
-    background-color: transparent;
-}
-.touch #cd-vertical-nav.open + .cd-nav-trigger span {
-    background-color: rgba(62, 57, 71, 0);
-}
-.touch #cd-vertical-nav.open + .cd-nav-trigger span::before, .touch #cd-vertical-nav.open + .cd-nav-trigger span::after {
-    background-color: #3e3947;
-    height: 3px;
-    width: 20px;
-    border-radius: 0;
-    left: -8px;
-}
-.touch #cd-vertical-nav.open + .cd-nav-trigger span::before {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    top: 1px;
-}
-.touch #cd-vertical-nav.open + .cd-nav-trigger span::after {
-    -webkit-transform: rotate(135deg);
-    -moz-transform: rotate(135deg);
-    -ms-transform: rotate(135deg);
-    -o-transform: rotate(135deg);
-    transform: rotate(135deg);
-    bottom: 0;
-}
-.touch #cd-vertical-nav li:last-child a {
-    border-bottom: none;
-}
+
+    .touch #cd-vertical-nav a {
+        display: block;
+        padding: 1em;
+        border-bottom: 1px solid rgba(62, 57, 71, 0.1);
+    }
+
+        .touch #cd-vertical-nav a span:first-child {
+            display: none;
+        }
+
+        .touch #cd-vertical-nav a.is-selected span:last-child {
+            color: #d88683;
+        }
+
+    .touch #cd-vertical-nav.open {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+    }
+
+        .touch #cd-vertical-nav.open + .cd-nav-trigger {
+            background-color: transparent;
+        }
+
+            .touch #cd-vertical-nav.open + .cd-nav-trigger span {
+                background-color: rgba(62, 57, 71, 0);
+            }
+
+                .touch #cd-vertical-nav.open + .cd-nav-trigger span::before, .touch #cd-vertical-nav.open + .cd-nav-trigger span::after {
+                    background-color: #3e3947;
+                    height: 3px;
+                    width: 20px;
+                    border-radius: 0;
+                    left: -8px;
+                }
+
+                .touch #cd-vertical-nav.open + .cd-nav-trigger span::before {
+                    -webkit-transform: rotate(45deg);
+                    -moz-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    -o-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    top: 1px;
+                }
+
+                .touch #cd-vertical-nav.open + .cd-nav-trigger span::after {
+                    -webkit-transform: rotate(135deg);
+                    -moz-transform: rotate(135deg);
+                    -ms-transform: rotate(135deg);
+                    -o-transform: rotate(135deg);
+                    transform: rotate(135deg);
+                    bottom: 0;
+                }
+
+    .touch #cd-vertical-nav li:last-child a {
+        border-bottom: none;
+    }
 
 @media only screen and (min-width: 768px) {
     .touch .cd-nav-trigger, .touch #cd-vertical-nav {
