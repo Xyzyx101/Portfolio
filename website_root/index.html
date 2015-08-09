@@ -69,9 +69,11 @@
         </nav>
 
         <div id="parallax_viewport" class="grid_12 alpha omega">
-            <div id="big_layer" class="parallax_layer"></div>
-            <div id="med_layer" class="parallax_layer"></div>
-            <div id="small_layer" class="parallax_layer"></div>
+            <ul id="parallax_parent">
+                <li id="small_layer" class="layer" data-depth="0.90"></li>
+                <li id="med_layer" class="layer" data-depth="0.65"></li>
+                <li id="big_layer" class="layer" data-depth="0.35"></li>
+            </ul>
 
             <header id="section1" class="nav_section grid_12">
                 <div class="section-container grid_8 prefix_2 suffix_2 alpha omega">
@@ -471,7 +473,7 @@
         </div>
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="js/jquery.parallax.js"></script>
+    <script src="js/parallax.js"></script>
     <script type="text/javascript" src="./js/portfolio.js"></script>
 </body>
 </html>

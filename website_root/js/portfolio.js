@@ -93,36 +93,22 @@ jQuery(document).ready(function ($) {
             calculateSectionSizes();
         },400);
     });
-
-
-    (function setupParallax() {
-        var parallaxViewport = $("#parallax_viewport");
-        var options = {
-            mouseport: parallaxViewport,
-            xorigin: 0.5,
-            yorigin: 0.0,
-            decay: 0.97,
-            frameDuration: 50
-        };
-        var optionsBig = {
-            xparallax: -0.24,
-            yparallax: -0.12
-        };
-        var optionsMed = {
-            xparallax: -0.12,
-            yparallax: -0.06
-        };
-        var optionsSmall = {
-            xparallax: -0.07,
-            yparallax: -0.03
-        };
-        $(".parallax_layer").parallax(
-            options,
-            optionsBig,
-            optionsMed,
-            optionsSmall
-        );
-    })();
+    var scene = document.getElementById('parallax_parent');
+    var parallaxSettings = {
+        calibrateX: false,
+        calibrateY: false,
+        invertX: false,
+        invertY: false,
+        limitX: false,
+        limitY: false,
+        scalarX: 4,
+        scalarY: 1,
+        frictionX: 0.1,
+        frictionY: 0.1,
+        originX: 0.5,
+        originY: 0.5
+    }
+    var parallax = new Parallax(scene, parallaxSettings);
 
     /* Resize sections to fill screen vertically */
     function calculateSectionSizes() {

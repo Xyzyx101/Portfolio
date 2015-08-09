@@ -205,13 +205,23 @@ a {
     width: 100%;
 }
 
-.parallax_layer {
+.layer {
     position: absolute;
     background-repeat: repeat;
     height: 200%;
     width: 200%;
     top: -1000px;
 }
+
+#parallax_parent {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    overflow: hidden;
+    height: 200%;
+    width: 200%;
+}
+
 
 #big_layer {
     background: url("../images/background_big.png") repeat;
