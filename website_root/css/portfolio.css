@@ -14,7 +14,14 @@ header, h1, h2 {
 
 nav ul li {
     float: left;
+    white-space: nowrap;
 }
+
+    nav ul li a {
+        float: left;
+        overflow: visible;
+        white-space: nowrap;
+    }
 
 a {
     color: #b27f00;
@@ -49,7 +56,7 @@ a {
 
     .section-content h2 {
         font-size: 140%;
-        background-color: rgba(28,69,178, 0.5);/*#1c45b2;*/
+        background-color: rgba(28,69,178, 0.5); /*#1c45b2;*/
         color: #ffc943;
         z-index: 100;
         padding-top: 5px;
@@ -84,6 +91,10 @@ a {
         text-indent: 2em;
     }
 
+    .section-content li p {
+        text-indent: 0;
+    }
+
 .section-container {
     /*background-color : green;*/
     /*background-color : #3561d4;*/
@@ -92,7 +103,7 @@ a {
 
 #name {
     padding: 20px 0;
-    background-color: transparent;/*rgba(28,69,178, 0.5);*/
+    background-color: transparent; /*rgba(28,69,178, 0.5);*/
     color: #ffc943; /*#0046ff;*/
     font-family: 'Orbitron', sans-serif;
     font-weight: 500;
