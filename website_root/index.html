@@ -366,11 +366,36 @@
                     <heading class="section-content grid_8 alpha omega">
                         <h2 class="grid_8 alpha omega">Treasure Cave</h2>
                         <p class="grid_7 prefix_1 alpha omega">
+                            This is a low level engine design project in C++.  It uses DirectX and SDL 2.0 and the game
+                            engine code was written be me.  You play a wizard and the object is to collect as much gold as
+                            you can before being overwhelmed by zombies and skeletons.  The controls are wasd to move and
+                            left click the mouse to shoot.
+                        </p>
+                        <p class="grid_7 prefix_1 alpha omega">
+                            The gameplay is simple but there are a few interesting engine systems.  First all of the enemy
+                            animation is imported through data files.  The data files are hand written but in 
+                            a larger project it would be easy to make a small editor to allow quick addition or
+                            iteration of enemy types.
+                        </p>
+                        <p class="grid_7 prefix_1 alpha omega">
+                            The level is tile based and was created using the <a target="_blank" href="http://www.mapeditor.org/">Tiled Map Editor</a>.
+                            Tile and collision data is imported using a custom importer written for this game and would allow a level designer
+                            to add additional level easily.
                         </p>
                     </heading>
                     <article class="section-content grid_8 alpha omega">
-                        <h2 class="grid_8 alpha omega">Gameplay</h2>
-                        <p></p>
+                        <h2 class="grid_8 alpha">&nbsp;Treasure Cave</h2>
+                        <p class="grid_7 alpha">Desktop control are wasd to move and mouse left to shoot fireballs.</p>
+                        <ul class="grid_7 prefix_1 alpha">
+                            <li><a target="_blank" href="./resources/TreasureCave.zip">Play the Game</a></li>
+                            <li><a target="_blank" href="https://github.com/Xyzyx101/SDL_Engine/tree/master/SDL_Engine">View the Code</a></li>
+                        </ul>
+                    </article>
+                    <article class="section-content grid_8 alpha omega">
+                        <img class="grid_8 alpha omega" src="images/TreasureCave01.png" />
+                    </article>
+                    <article class="section-content grid_8 alpha omega">
+                        <img class="grid_8 alpha omega" src="images/TreasureCave02.png" />
                     </article>
                 </div>
                 <div class="grid_1 omega forward-arrow">
@@ -387,12 +412,40 @@
                     <heading class="section-content grid_8 alpha omega">
                         <h2 class="grid_8 alpha omega">Project Greed</h2>
                         <p class="grid_7 prefix_1 alpha omega">
+                            I hesitated about adding this project to my portfolio because the project did not
+                            produce a playable game but I learned so much about server programming and designing
+                            online multiplayer that it would be shame to leave it out.
+                        </p>
+                        <p class="grid_7 prefix_1 alpha omega">
+                            This project was designed a built by a team of three people and was intended to be
+                            an entry into Microsoft's Goa contest to make a game using Azure.  The design was similar
+                            to a classic rogue-like generated dungeon except multiplayer and each player starts
+                            each game at level 1 and races to compete against the other players similar to a MOBA.
+                        </p>
+                        <p class="grid_7 prefix_1 alpha omega">
+                            My part of the project was the server, netcode and build infrastructure.  The game server
+                            is written in Go.  The actual game code was written as a C++ library.  By writing the game
+                            as a library it allows us to have an authoritative copy of the world running on the server
+                            and also have local simulations running on each client.  The server converts the running
+                            game into reliable event messages and unreliable state messages that are serialized using
+                            Google Protocol Buffers and sent to the client.  The client return serialized player control input.
+                        </p>
+                        <p class="grid_7 prefix_1 alpha omega">
+                            The Go server communicates with the library through a C wrapper around the library.
+                            The local simulation on each client allows the gameplay to seem reactive and quick while
+                            the network connection keeps the simulation in sync with the authoritative world in the
+                            background.  The library is build using CMake that allows the client to be written in
+                            Visual Studio while also allowing a GCC version to be compiled with a C wrapper layer
+                            that can be included by the Go server.
+                        </p>
+                        <p class="grid_7 prefix_1 alpha omega">
+                            Ultimately it took too much of the four month schedule to get the server and netcode
+                            to a place where we could work on game code.  There was not enough time to work out
+                            bugs in the game code that is there to have a presentable product.  I may still use
+                            the server for either this game or another one in future.  The knowledge I gained in
+                            Go, server programming, unit testing and build systems will be vary valuable going forward.
                         </p>
                     </heading>
-                    <article class="section-content grid_8 alpha omega">
-                        <h2 class="grid_8 alpha omega">Gameplay</h2>
-                        <p class="grid_7 prefix_1 alpha omega"></p>
-                    </article>
                 </div>
                 <div class="grid_1 omega forward-arrow">
                     <div class="forward-arrow-image"></div>
@@ -454,11 +507,50 @@
                     <heading class="section-content grid_8 alpha omega">
                         <h2 class="grid_8 alpha omega">Stunt Nugget</h2>
                         <p class="grid_7 prefix_1 alpha omega">
+                            Stunt Nugget is a game about Nugget the stunt chicken.  Nugget is built with Box2D bodies and acts like a
+                            large bouncy ball.  His limbs are physics bodies attached by constraints that allow him to flap and dance
+                            and bounce around in a way that is plesing to watch.
+                        </p>
+                        <p class="grid_7 prefix_1 alpha omega">
+                            Stunt Nugget is a phone game written in Java and targeted to Android although it was tested on BlackBerry.
+                            It was developed in Eclipse and uses libGDX framework.  The physics objects and the layout of the levels
+                            was built using a tool called R.U.B.E. and imported using an open source library called RubeLoader.  R.U.B.E.
+                            allowed me to create sophisticated Box2D shapes and bodies in a CAD like editor and import them.
+                        </p>
+                        <p class="grid_7 prefix_1 alpha omega">
+                            The focus on the game was to design something that worked well on mobile.  The design was influenced by the elements
+                            of angry birds that make it a greate phone game.  The level starts static and allows the player to line up a single
+                            without time pressure.  After the shot is taken; the physics takes over and the player gets to watch Nugget bounce around
+                            the level collecting stars.  To win a level and move on the player must collect at least one star.  Three stars is a perfect score.
+                        </p>
+                        <p class="grid_7 prefix_1 alpha omega">
+                            The core mechanic of the game all work.  I designed and drew the character and he came out well.  The game is very short on
+                            content, art and need more obstacles before it would be ready to ship.
                         </p>
                     </heading>
                     <article class="section-content grid_8 alpha omega">
-                        <h2 class="grid_8 alpha omega">Gameplay</h2>
-                        <p></p>
+                        <h2 class="grid_8 alpha">Stunt Nugget</h2>
+                        <ul class="grid_6 prefix_1 alpha">
+                            <li><a target="_blank" href="https://github.com/Xyzyx101/StuntNugget/blob/master/GDD/StuntNugget.pdf">Design Documentation</a></li>
+                            <li>
+                                <a target="_blank" href="https://github.com/Xyzyx101/StuntNugget/tree/master/Game">View the Code</a>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="section-content grid_8 alpha omega">
+                        <img class="grid_8 alpha omega" src="images/StuntNugget01.png" />
+                    </article>
+                    <article class="section-content grid_8 alpha omega">
+                        <img class="grid_8 alpha omega" src="images/StuntNugget02.png" />
+                    </article>
+                    <article class="section-content grid_8 alpha omega">
+                        <img class="grid_8 alpha omega" src="images/StuntNugget03.png" />
+                    </article>
+                    <article class="section-content grid_8 alpha omega">
+                        <img class="grid_8 alpha omega" src="images/StuntNugget04.png" />
+                    </article>
+                    <article class="section-content grid_8 alpha omega">
+                        <img class="grid_8 alpha omega" src="images/StuntNugget05.png" />
                     </article>
                 </div>
                 <div class="grid_1 omega forward-arrow">
